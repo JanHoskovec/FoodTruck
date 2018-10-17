@@ -5,7 +5,6 @@ using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,38 +12,42 @@ using System.Windows.Controls;
 
 namespace FoodTruck.UI.ViewModels
 {
-    public class SignupViewModel : BindableBase
+    public class LoginViewModel : BindableBase
     {
         private User _user;
         public User user { get { return _user; } set { SetProperty(ref _user, value); } }
         private DelegateCommand<PasswordBox> _command;
-        public DelegateCommand<PasswordBox> SignUp
+        public DelegateCommand<PasswordBox> Login
         {
             get { return _command; }
         }
-
-        public SignupViewModel()
+        
+        public LoginViewModel()
         {
             _user = new User();
-            _command = new DelegateCommand<PasswordBox>(DoSignUp);
+            _command = new DelegateCommand<PasswordBox>(DoLogin);
         }
 
-        protected void DoSignUp(PasswordBox box)
+        protected void DoLogin(PasswordBox box)
         {
-            
-            user.PasswordHash = DefaultViewModel.GetHashString(box.Password);
             UserDataLayer Layer = new UserDataLayer();
             User fromDb = Layer.GetOne(user.Email);
             if (fromDb.Email == null)
-            { 
-                Layer.Create(user);
+            {
+                MessageBox.Show("L'adresse e-mail n'a pas été reconnue.");
+            }
+            else if (fromDb.PasswordHash != DefaultViewModel.GetHashString(box.Password))
+            {
+                MessageBox.Show("Mauvais mot de passe.");
             }
             else
             {
-                MessageBox.Show("L'adresse e-mail spécifiée est déjà liée à un compte.");
+                _user = fromDb;
+                //TODO 
+                // Tell the session to show the user logged in
+                // Redirect to another page
             }
+                
         }
-
-        
     }
 }

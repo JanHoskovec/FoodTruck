@@ -6,7 +6,36 @@
         xmlns:local="clr-namespace:FoodTruck.UI"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
+ 
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            
+            <Button Width="80" Click="ClickOnLogo">
+                <Button.Background>
+                    <ImageBrush ImageSource="Media/logo.png" />
+                </Button.Background>
+            </Button>
+            <Button Width="80" Click="ClickOnLogo">
+                Acceuil
+            </Button>
+            <Button Width="80" Click="Button_Click">
+                Menu
+            </Button>
+            <Button Width="80" Click="Button_Click">
+                Connexion
+            </Button>
+            <Button Width="80" HorizontalAlignment="Right">
+                <Button.Background>
+                    <ImageBrush ImageSource="Media/panier.jpg" />
+                </Button.Background>
+            </Button>
+        </StackPanel>
+        <Frame Grid.Row="1" x:Name="mainframe" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>

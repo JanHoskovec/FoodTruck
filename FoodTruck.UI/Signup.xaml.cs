@@ -28,6 +28,7 @@ namespace FoodTruck.UI
             GenderBox.ItemsSource = Enum.GetValues(typeof(TypeGender)).Cast<TypeGender>();
         }
 
+       
 
         private void PwdVerifPasswordChanged(object sender, RoutedEventArgs e)
         {

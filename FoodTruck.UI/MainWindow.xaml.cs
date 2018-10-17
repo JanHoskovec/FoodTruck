@@ -20,9 +20,28 @@ namespace FoodTruck.UI
     /// </summary>
     public partial class MainWindow : Window
     {
+
+
         public MainWindow()
         {
             InitializeComponent();
+            mainframe.Navigate(new Acceuil());
+        }
+        
+        private void ClickOnLogo(object sender, RoutedEventArgs e)
+        {
+            mainframe.Navigate(new Acceuil());
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = sender as Button;
+            switch (b.Content)
+            {
+                case ("Connexion"):
+                    mainframe.Navigate(new Login());
+                    break;
+            }
         }
     }
 }
