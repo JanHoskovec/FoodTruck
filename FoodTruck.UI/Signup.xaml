@@ -33,7 +33,7 @@
                 <TextBlock x:Name="statusText" Margin="10" HorizontalAlignment="Center" />
             </StackPanel>
 
-            <Button x:Name="ButtonSignup" Command="{Binding SignUp}" CommandParameter="{Binding ElementName=Pwd}">Créer nouveau utilisateur</Button>
+            <Button x:Name="ButtonSignup" IsEnabled="False" Command="{Binding SignUp}" CommandParameter="{Binding ElementName=Pwd}">Créer nouveau utilisateur</Button>
         </StackPanel>
     </Grid>
 </Page>

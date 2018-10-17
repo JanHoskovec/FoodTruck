@@ -8,6 +8,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace FoodTruck.UI.ViewModels
@@ -30,9 +31,18 @@ namespace FoodTruck.UI.ViewModels
 
         protected void DoSignUp(PasswordBox box)
         {
+            
             user.PasswordHash = GetHashString(box.Password);
             UserDataLayer Layer = new UserDataLayer();
-            Layer.Create(user);
+            User fromDb = Layer.GetOne(user.Email);
+            if (fromDb.Email == null)
+            { 
+                Layer.Create(user);
+            }
+            else
+            {
+                MessageBox.Show("L'adresse e-mail spécifiée est déjà liée à un compte.");
+            }
         }
 
         public byte[] GetHash(string inputString)

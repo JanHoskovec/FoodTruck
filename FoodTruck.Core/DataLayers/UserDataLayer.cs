@@ -26,7 +26,7 @@ namespace FoodTruck.Core.DataLayers
                         using (SqlCommand queryUser = context.CreateCommand())
                         {
                             queryUser.CommandText = "SELECT Id, Email, Password, Nom, Prenom, DateNaissance, Adresse, Societe, Genre "+
-                                                    "FROM Utilisateur; " +
+                                                    "FROM Utilisateur " +
                                                     "Where Email = '" + email + "'";
                             
                             using (SqlDataReader ReaderUser = queryUser.ExecuteReader())
