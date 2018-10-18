@@ -45,6 +45,7 @@ namespace FoodTruck.UI.ViewModels
                 _user = fromDb;
                 //TODO 
                 // Tell the session to show the user logged in
+                Session.Instance().user = _user;
                 // Redirect to another page
             }
                 
