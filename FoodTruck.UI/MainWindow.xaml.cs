@@ -43,6 +43,10 @@ namespace FoodTruck.UI
                 case ("Connexion"):
                     mainframe.Navigate(new Login());
                     break;
+
+                case ("Menu"):
+                    mainframe.Navigate(new ChoixMenu());
+                    break;
             }
         }
         
