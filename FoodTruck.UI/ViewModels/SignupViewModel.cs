@@ -39,24 +39,31 @@ namespace FoodTruck.UI.ViewModels
         {
 
             user.PasswordHash = DefaultViewModel.GetHashString(box.Password);
-            UserDataLayer Layer = new UserDataLayer();
-            User fromDb = Layer.GetOne(user.Email);
-            if (fromDb.Email == null)
+            if (IsValidEmail(user.Email))
             {
-                Layer.Create(user);
-                MailMessage message = new MailMessage()
+                UserDataLayer Layer = new UserDataLayer();
+                User fromDb = Layer.GetOne(user.Email);
+                if (fromDb.Email == null)
                 {
-                    Subject = "Bienvenue chez Bon App !",
-                    Body = "Ceci est un message de test",
-                    From = new MailAddress("bonapp69test@gmail.com")
-                };
-                message.To.Add(user.Email);
-                SendMail(message);
-                RedirectEvent?.Invoke(new Login());
+                    Layer.Create(user);
+                    MailMessage message = new MailMessage()
+                    {
+                        Subject = "Bienvenue chez Bon App !",
+                        Body = "Ceci est un message de test",
+                        From = new MailAddress("bonapp69test@gmail.com")
+                    };
+                    message.To.Add(user.Email);
+                    SendMail(message);
+                    RedirectEvent?.Invoke(new Login());
+                }
+                else
+                {
+                    MessageBox.Show("L'adresse e-mail spécifiée est déjà liée à un compte.");
+                }
             }
             else
             {
-                MessageBox.Show("L'adresse e-mail spécifiée est déjà liée à un compte.");
+                MessageBox.Show("L'adresse e-mail spécifiée n'est pas valide.");
             }
         }
 
@@ -72,6 +79,19 @@ namespace FoodTruck.UI.ViewModels
             client.EnableSsl = true;
             client.Credentials = new NetworkCredential("bonapp69test@gmail.com", "bonapp69");
             client.Send(Message);
+        }
+
+        public static bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
     }
