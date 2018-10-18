@@ -25,6 +25,8 @@ namespace FoodTruck.UI
         {
             InitializeComponent();
             this.DataContext = new LoginViewModel();
+            var vm = (LoginViewModel)DataContext;
+            vm.MyEvent += (redirectTo) => this.NavigationService.Navigate(redirectTo);
         }
 
         private void ClickOnSignup(object sender, RoutedEventArgs e)
