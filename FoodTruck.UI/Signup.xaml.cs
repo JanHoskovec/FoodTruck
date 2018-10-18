@@ -24,7 +24,9 @@ namespace FoodTruck.UI
         public Signup()
         {
             InitializeComponent();
-            this.DataContext = new SignupViewModel();
+            var vm = new SignupViewModel();
+            this.DataContext = vm;
+            vm.RedirectEvent += (redirectTo) => this.NavigationService.Navigate(redirectTo);
             GenderBox.ItemsSource = Enum.GetValues(typeof(TypeGender)).Cast<TypeGender>();
         }
 
