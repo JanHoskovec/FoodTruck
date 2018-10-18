@@ -1,13 +1,15 @@
 ﻿using FoodTruck.Core.Models;
+using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FoodTruck.UI
 {
-    public class Session
+    public class Session : BindableBase
     {
         #region singleton props
         private static Session _instance = null;
@@ -26,7 +28,9 @@ namespace FoodTruck.UI
         #endregion
 
         #region public fields
-        public User user { get; set; }
+        private User _user = null;
+        public User user { get { return _user; } set {SetProperty(ref _user, value) ; } }
         #endregion
+        
     }
 }

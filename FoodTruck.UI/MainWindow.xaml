@@ -35,6 +35,7 @@
                     <ImageBrush ImageSource="Media/panier.jpg" />
                 </Button.Background>
             </Button>
+            <TextBlock x:Name="username" Text="{Binding user.FirstName, Mode=TwoWay}" />
         </StackPanel>
         <Frame Grid.Row="1" x:Name="mainframe" NavigationUIVisibility="Hidden" />
     </Grid>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodTruck.UI.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,7 @@ namespace FoodTruck.UI
         {
             InitializeComponent();
             mainframe.Navigate(new Acceuil());
+            this.DataContext = Session.Instance();
         }
         
         private void ClickOnLogo(object sender, RoutedEventArgs e)
@@ -43,5 +45,7 @@ namespace FoodTruck.UI
                     break;
             }
         }
+        
+        
     }
 }

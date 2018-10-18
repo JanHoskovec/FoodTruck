@@ -18,7 +18,7 @@ namespace FoodTruck.UI.ViewModels
         public User user { get { return _user; } set { SetProperty(ref _user, value); } }
 
         public delegate void MyEventAction(object redirectTo);
-        public event MyEventAction MyEvent;
+        public event MyEventAction RedirectEvent;
 
         private DelegateCommand<PasswordBox> _command;
         public DelegateCommand<PasswordBox> Login
@@ -29,6 +29,7 @@ namespace FoodTruck.UI.ViewModels
         public LoginViewModel()
         {
             _user = new User();
+            _user.FirstName = "John";
             _command = new DelegateCommand<PasswordBox>(DoLogin);
         }
 
@@ -47,11 +48,8 @@ namespace FoodTruck.UI.ViewModels
             else
             {
                 _user = fromDb;
-                //TODO 
-                // Tell the session to show the user logged in
                 Session.Instance().user = _user;
-                // Redirect to another page
-                MyEvent?.Invoke(new Acceuil());
+                RedirectEvent?.Invoke(new Acceuil());
             }
                 
         }
