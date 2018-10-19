@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="DataLayers\ProductDataLayer.cs" />
     <Compile Include="DataLayers\UserDataLayer.cs" />
+    <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Produit.cs" />
     <Compile Include="Models\TypeGender.cs" />
     <Compile Include="Models\TypeMenu.cs" />

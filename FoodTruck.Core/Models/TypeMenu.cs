@@ -3,5 +3,6 @@
     Entrée,
     Plat,
     Dessert,
-    Boisson
+    Boisson,
+    Formule
 }

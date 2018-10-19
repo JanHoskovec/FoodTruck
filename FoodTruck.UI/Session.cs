@@ -30,6 +30,9 @@ namespace FoodTruck.UI
         #region public fields
         private User _user = null;
         public User user { get { return _user; } set {SetProperty(ref _user, value) ; } }
+        private Panier _panier = new Panier();
+        public Panier Panier { get { return _panier; } }
+        
         #endregion
         
     }

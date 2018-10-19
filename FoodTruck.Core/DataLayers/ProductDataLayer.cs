@@ -1,6 +1,7 @@
 ﻿using FoodTruck.Core.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,9 @@ namespace FoodTruck.Core.DataLayers
 {
     public class ProductDataLayer
     {
-        public List<Produit> GetAll()
+        public ObservableCollection<Produit> GetAll()
         {
-            List<Produit> result = new List<Produit>();
+            ObservableCollection<Produit> result = new ObservableCollection<Produit>();
 
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
@@ -39,13 +40,13 @@ namespace FoodTruck.Core.DataLayers
             return result;
         }
 
-        public List<Produit> GetAllOneType(TypeMenu type)
+        public ObservableCollection<Produit> GetAllOneType(TypeMenu type)
         {
-            List<Produit> result = new List<Produit>();
+            ObservableCollection<Produit> result = new ObservableCollection<Produit>();
 
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                string commandText = "select Id, Designation, Prix, Image, Quantite, Unite, TypeMenu from produit where type = " + (int)type;
+                string commandText = "select Id, Designation, Prix, Image, Quantite, Unite, TypeMenu from produit where TypeMenu = " + (int)type;
                 using (SqlCommand command = new SqlCommand(commandText))
                 {
                     SqlDataReader reader = command.ExecuteReader();
