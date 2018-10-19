@@ -27,7 +27,8 @@ namespace FoodTruck.UI
         {
             InitializeComponent();
             mainframe.Navigate(new Acceuil());
-            this.DataContext = Session.Instance();
+            username.DataContext = Session.Instance();
+            total.DataContext = Session.Instance().Panier;
         }
         
         private void ClickOnLogo(object sender, RoutedEventArgs e)

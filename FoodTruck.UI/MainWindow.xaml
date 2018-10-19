@@ -9,7 +9,7 @@
 
 
 
-    <Grid>
+    <Grid Background="{StaticResource Fond1}">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
@@ -32,7 +32,7 @@
             </Button>
             <Button Width="80" HorizontalAlignment="Right" Click="ClickOnCart">
                 <Button.Background>
-                    <ImageBrush ImageSource="Media/panier.jpg" />
+                    <ImageBrush ImageSource="Media/Panier.png" />
                 </Button.Background>
             </Button>
             <Grid>
@@ -48,7 +48,7 @@
                         </MultiBinding>
                     </TextBlock.Text>
                 </TextBlock>
-                <TextBlock x:Name="total" Grid.Row="1" Text="{Binding Panier.Total, StringFormat=Votre panier : {0} €, Mode=OneWay}" Margin="10 0 0 0" />
+                <TextBlock x:Name="total" Grid.Row="1" Text="{Binding Total, StringFormat=Votre panier : {0} €, Mode=TwoWay}" Margin="10 0 0 0" />
             </Grid>
         </StackPanel>
         <Frame Grid.Row="1" x:Name="mainframe" NavigationUIVisibility="Hidden" />

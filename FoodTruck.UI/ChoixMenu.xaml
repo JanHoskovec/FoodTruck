@@ -5,68 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FoodTruck"
         mc:Ignorable="d"
-        Title="ChoixMenu" Height="600" Width="800">
+        Title="ChoixMenu" Height="550" Width="800">
     <Grid>
-        
-        <StackPanel Background="{StaticResource Fond1}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="Menu" Orientation="Vertical" Margin="0,0,0,-21"   >
-            <!--<TextBlock Text="Choix du menu" HorizontalAlignment="Center" Width="150" FontWeight="Bold" FontSize="16"/>-->
+
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="Menu" Orientation="Vertical" Margin="0,0,0,-21"   >
 
             <StackPanel x:Name="des" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
-                <Button Background="{StaticResource FormulePD}" Width="175" Content="Formule petit déjeuner 5€" Margin="10 0 0 0" HorizontalAlignment="Right" Height="70" />
-                <Button Background="{StaticResource FormuleD}" Width="175" Height="67"  Content="Formule déjeuner 15€" Margin="10 0 0 0" HorizontalAlignment="Right"/>
-                <Button Background="{StaticResource FormuleG}" Width="175" Content="Formule gouter 5€" Margin="10 0 0 0" HorizontalAlignment="Right" />
-                <Button Background="{StaticResource FormuleDin}" Width="175" Height="67"  Content="Formule dîner 19€" Margin="10 0 0 0" HorizontalAlignment="Right"/>
+                <Button Background="{StaticResource FormulePD}"  Click="Button_Click" BorderBrush="Black" BorderThickness="2" Width="175" Height="70" Content="Formule petit déjeuner 5€" Margin="10 0 0 0" HorizontalAlignment="Right" FontSize="15"/>
+                <Button Background="{StaticResource FormuleD}" Click="Button_Click"  BorderBrush="Black" BorderThickness="2" Width="175" Height="70"  Content="Formule déjeuner 12€" Margin="10 0 0 0" HorizontalAlignment="Right" FontSize="15"/>
+                <Button Background="{StaticResource FormuleG}" Click="Button_Click" BorderBrush="Black" BorderThickness="2" Width="175" Height="70" Content="Formule gouter 5€" Margin="10 0 0 0" HorizontalAlignment="Right" FontSize="15" />
+                <Button Background="{StaticResource FormuleDin}" Click="Button_Click" BorderBrush="Black" BorderThickness="2" Width="175" Height="70"  Content="Formule dîner 15€" Margin="10 0 0 0" HorizontalAlignment="Right" FontSize="15"/>
             </StackPanel>
-            <Button Background="{StaticResource Carte}" Width="174" Height="58"  Content="Nos Produits à la carte..." Margin="314,0,304,0" HorizontalAlignment="Center"/>
-
-            <StackPanel x:Name="Menus" Orientation="Horizontal" HorizontalAlignment="Center" Margin="16,10" Height="420" Width="760">
-                <Border BorderBrush="Black" BorderThickness="4" CornerRadius="10" Margin="5" >
-                    <TextBlock  TextAlignment="Center" Height="415" Width="230" Margin="5,-4,5,-9" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Verdana" FontSize="20">
-                        <Run Text="NOS BOISSONS"  TextDecorations="Underline" />
-                       <LineBreak /><LineBreak />
-                         <Run Text="CHAUDES :" />
-                        <LineBreak />
-                         <Run Text="-Thé " /> <LineBreak />  <Run Text="-Café " />  <LineBreak />  <Run Text="-Chocolat " />
-                        <LineBreak /><LineBreak /><LineBreak />
-                          <Run Text="FROIDES :" />  <LineBreak />
-                        <Run Text="-Jus de fruits frais " /> <LineBreak />  <Run Text="-Eau plate " />  <LineBreak />  <Run Text="-Eau pétillante " />
-                    </TextBlock>
-               </Border>
-                
-                <Border BorderBrush="Black" BorderThickness="4" CornerRadius="10" Margin="5" >
-                    <TextBlock TextAlignment="Center"  Height="406" Width="230" Margin="5,-4,5,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontFamily="Verdana" FontSize="20"><Run />
-                     <Run Text="NOS PLATS"  TextDecorations="Underline" />
-                       <LineBreak /><LineBreak />
-                         <Run Text="VEGETARIEN :" />
-                        <LineBreak />
-                         <Run Text="-Bouchée bio  " /> <LineBreak />  <Run Text="-Gratin de pdt " />  <LineBreak />  <Run Text="-Risotto aux aspesges " />
-                        <LineBreak /><LineBreak />
-                          <Run Text="POISSONS :" />  <LineBreak />
-                        <Run Text="-Tartare de saumon " /> <LineBreak />  
-                        <LineBreak />  
-                        <Run Text="-BOEUF : " /> <LineBreak /> <Run Text="-Tartare de boeuf " />
-                         <LineBreak />  <LineBreak />  
-                        <Run Text="-POULET : " /> <LineBreak /> <Run Text="-Poulet à la paysanne " />
-                    </TextBlock>
-                </Border>
-                
-                
-                <Border BorderBrush="Black" BorderThickness="4" CornerRadius="10" Margin="5" Width="239" >
-                    <TextBlock TextAlignment="Center"  Height="400" Width="222" Margin="5,-4,5,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Verdana" FontSize="20"><Run/>
-                     <Run Text="NOS DESSERTS"  TextDecorations="Underline" />
-                         <LineBreak />  <LineBreak />  
-                        <Run Text="Biscuit aux muesli " /> <LineBreak /> 
-                        <Run Text="Yaourt maison " /> <LineBreak /> 
-                        <LineBreak /> <Run Text="Gateau chocolat banane " /> <LineBreak /> 
-                        <LineBreak /> <Run Text="Madeleine framboise " />   <LineBreak /> 
-                        <LineBreak /> <Run Text="Smoothie aux yahourt " />  <LineBreak /> 
-                        <LineBreak /> <Run Text="Fruits frais " /> <LineBreak /> 
-                        <LineBreak /> <Run Text="Muesli aux fruits frais " />
-                    </TextBlock>
-                </Border>
-                
-            </StackPanel>
-
+            <Button Background="{StaticResource Carte}" BorderBrush="Black" BorderThickness="2" Width="170" Height="70"  Content="Nos Produits à la carte..." Margin="314,0,304,0" HorizontalAlignment="Center" FontSize="15"/>
         </StackPanel>
+        <Frame x:Name="Choix" NavigationUIVisibility="Hidden" />
+
     </Grid>
 </Page>

@@ -64,10 +64,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataLayers\MenuDataLayer.cs" />
     <Compile Include="DataLayers\ProductDataLayer.cs" />
     <Compile Include="DataLayers\UserDataLayer.cs" />
+    <Compile Include="Models\Formule.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Produit.cs" />
+    <Compile Include="Models\TypeFormule.cs" />
     <Compile Include="Models\TypeGender.cs" />
     <Compile Include="Models\TypeMenu.cs" />
     <Compile Include="Models\User.cs" />

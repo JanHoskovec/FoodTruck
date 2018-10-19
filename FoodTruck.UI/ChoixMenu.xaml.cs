@@ -24,5 +24,27 @@ namespace FoodTruck.UI
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = sender as Button;
+            switch (b.Content)
+            {
+                case ("Formule déjeuner 12€"):
+                    Choix.Navigate(new Menu3Items(TypeFormule.Dejeuner));
+                    break;
+
+                case ("Formule dîner 15€"):
+                    Choix.Navigate(new Menu3Items(TypeFormule.Diner));
+                    break;
+
+                case ("Formule petit déjeuner 5€"):
+                    Choix.Navigate(new Menu2Items(TypeFormule.PetitDejeuner));
+                    break;
+                case ("Formule gouter 5€"):
+                    Choix.Navigate(new Menu2Items(TypeFormule.Gouter));
+                    break;
+            }
+        }
     }
 }

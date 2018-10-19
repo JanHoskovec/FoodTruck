@@ -1,7 +1,6 @@
 ﻿public enum TypeMenu
 {
-    Entrée,
-    Plat,
+    Plat = 1,
     Dessert,
     Boisson,
     Formule

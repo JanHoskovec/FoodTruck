@@ -13,7 +13,7 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <ListView Grid.Row="0" x:Name="MyShoppingCart">
+        <ListView Grid.Row="0" x:Name="MyShoppingCart" Background="Transparent">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Article" Width="500" DisplayMemberBinding="{Binding Name}"/>
@@ -21,11 +21,10 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <DockPanel>
-            <StackPanel x:Name="SumLabel" DockPanel.Dock="Right">
-                <TextBlock Text="{Binding Total, StringFormat=Total : {0} €}" />
+        
+            <StackPanel Grid.Row="1" x:Name="SumLabel" HorizontalAlignment="Right">
+                <TextBlock Text="{Binding Total, StringFormat=Total : {0} €}" Margin="0 0 200 0"/>
             </StackPanel>
-        </DockPanel>
         
     </Grid>
 </Page>

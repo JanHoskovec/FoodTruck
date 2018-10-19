@@ -8,7 +8,7 @@
     <ImageBrush x:Key="FormuleDin" ViewportUnits="RelativeToBoundingBox"
                    Viewport="0 0 1 1" ImageSource="./Media/FormuleDiner.png" Opacity="0.5"></ImageBrush>
     <ImageBrush x:Key="Fond1" ViewportUnits="RelativeToBoundingBox"
-                   Viewport="0 0 1 1" ImageSource="./Media/fon.png" Opacity="0.2"></ImageBrush>
+                   Viewport="0 0 1 1" ImageSource="./Media/fon.png" Opacity="0.6"></ImageBrush>
     <ImageBrush x:Key="Carte" ViewportUnits="RelativeToBoundingBox"
                    Viewport="0 0 1 1" ImageSource="./Media/AlaCarte.jpg" Opacity="0.3"></ImageBrush>
     <ImageBrush x:Key="FormuleG" ViewportUnits="RelativeToBoundingBox"

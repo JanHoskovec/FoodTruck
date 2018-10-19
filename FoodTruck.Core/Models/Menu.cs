@@ -11,6 +11,7 @@ namespace FoodTruck.Core.Models
         private Produit _boisson;
         private Produit _plat;
         private Produit _dessert;
+        private TypeFormule _type;
         public Produit Boisson
         {
             get { return _boisson; }
@@ -19,13 +20,14 @@ namespace FoodTruck.Core.Models
         public Produit Plat
         {
             get { return _plat; }
-            set { if (value.TypeMenu == TypeMenu.Plat) SetProperty(ref _plat, value); }
+            set { if (value?.TypeMenu == TypeMenu.Plat) SetProperty(ref _plat, value); }
         }
         public Produit Dessert
         {
             get { return _dessert; }
             set { if (value.TypeMenu == TypeMenu.Dessert) SetProperty(ref _dessert, value); }
         }
+        public TypeFormule Type { get { return _type; } set { SetProperty(ref _type, value); } }
 
         public Menu()
         {

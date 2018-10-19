@@ -17,22 +17,25 @@ namespace FoodTruck.Core.DataLayers
 
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
+                connection.Open();
                 string commandText = "select Id, Designation, Prix, Image, Quantite, Unite, TypeMenu from produit";
-                using(SqlCommand command = new SqlCommand(commandText))
+                using (SqlCommand command = new SqlCommand(commandText, connection))
                 {
-                    SqlDataReader reader = command.ExecuteReader();
-                    while(reader.Read())
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        result.Add(new Produit
+                        while (reader.Read())
                         {
-                            Id = (decimal)reader["Id"],
-                            Name = (string)reader["Designation"],
-                            Price = (decimal)reader["Prix"],
-                            Image = (string)reader["Image"],
-                            Quantity = (decimal)reader["Quantite"],
-                            Unity = (string)reader["Unite"],
-                            TypeMenu = (TypeMenu)reader["TypeMenu"]
-                        });
+                            result.Add(new Produit
+                            {
+                                Id = (decimal)reader["Id"],
+                                Name = (string)reader["Designation"],
+                                Price = (decimal)reader["Prix"],
+                                Image = (string)reader["Image"],
+                                Quantity = (decimal)reader["Quantite"],
+                                Unity = (string)reader["Unite"],
+                                TypeMenu = (TypeMenu)reader["TypeMenu"]
+                            });
+                        }
                     }
                 }
             }
@@ -40,28 +43,34 @@ namespace FoodTruck.Core.DataLayers
             return result;
         }
 
-        public ObservableCollection<Produit> GetAllOneType(TypeMenu type)
+        public ObservableCollection<Produit> GetAllOneType(TypeMenu typeItem, TypeFormule typeRepas)
         {
             ObservableCollection<Produit> result = new ObservableCollection<Produit>();
 
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
-                string commandText = "select Id, Designation, Prix, Image, Quantite, Unite, TypeMenu from produit where TypeMenu = " + (int)type;
-                using (SqlCommand command = new SqlCommand(commandText))
+                connection.Open();
+                string commandText = "select Id, Designation, Prix, Image, Quantite, Unite, TypeMenu from Produit " +
+                    "join Contenir on Contenir.ProduitId = Produit.Id " +
+                    "where Contenir.MenuId = " + (int)typeRepas +
+                    " and Produit.TypeMenu = " + (int)typeItem;
+                using (SqlCommand command = new SqlCommand(commandText, connection))
                 {
-                    SqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        result.Add(new Produit
+                        while (reader.Read())
                         {
-                            Id = (decimal)reader["Id"],
-                            Name = (string)reader["Designation"],
-                            Price = (decimal)reader["Prix"],
-                            Image = (string)reader["Image"],
-                            Quantity = (decimal)reader["Quantite"],
-                            Unity = (string)reader["Unite"],
-                            TypeMenu = (TypeMenu)reader["TypeMenu"]
-                        });
+                            result.Add(new Produit
+                            {
+                                Id = (decimal)reader["Id"],
+                                Name = (string)reader["Designation"],
+                                Price = (decimal)reader["Prix"],
+                                Image = (string)reader["Image"],
+                                Quantity = (decimal)reader["Quantite"],
+                                Unity = (string)reader["Unite"],
+                                TypeMenu = (TypeMenu)reader["TypeMenu"]
+                            });
+                        }
                     }
                 }
             }

@@ -1,4 +1,5 @@
 ﻿using FoodTruck.Core.Models;
+using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace FoodTruck.UI
 {
-    public class Panier
+    public class Panier : BindableBase
     {
         public ObservableCollection<Produit> Products = new ObservableCollection<Produit>();
-
+        private decimal _total;
         public decimal Total
         {
             get
@@ -20,6 +21,10 @@ namespace FoodTruck.UI
                 foreach (Produit p in Products)
                     result += p.Price;
                 return result;
+            }
+            set
+            {
+                SetProperty(ref _total, value);
             }
         }
 

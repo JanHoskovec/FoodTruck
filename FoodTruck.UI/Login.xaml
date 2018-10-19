@@ -10,10 +10,10 @@
 
     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
         <TextBlock>Adresse e-mail :</TextBlock>
-        <TextBox Text="{Binding user.Email}"></TextBox>
+        <TextBox Text="{Binding user.Email}" Width="200"></TextBox>
         <TextBlock>Mot de passe :</TextBlock>
-        <PasswordBox x:Name="Pwd"/>
+        <PasswordBox x:Name="Pwd" Width="200"/>
         <Button Command="{Binding Login}" CommandParameter="{Binding ElementName=Pwd}">Se connecter</Button>
-        <Button Click="ClickOnSignup">Créer un compte</Button>
+        <Button Click="ClickOnSignup" Width="200">Créer un compte</Button>
     </StackPanel>
 </Page>
