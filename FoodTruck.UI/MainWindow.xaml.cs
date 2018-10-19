@@ -49,6 +49,11 @@ namespace FoodTruck.UI
                     break;
             }
         }
+
+        private void ClickOnCart(object sender, RoutedEventArgs e)
+        {
+            mainframe.Navigate(new ShoppingCart());
+        }
         
         
     }

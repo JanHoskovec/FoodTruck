@@ -31,5 +31,22 @@ namespace FoodTruck.UI
         {
             Products.Remove(p);
         }
+
+        public Panier()
+        {
+            //Products.Add(new Menu()
+            //{
+            //    Boisson = new Produit() { TypeMenu = TypeMenu.Boisson },
+            //    Plat = new Produit() { TypeMenu = TypeMenu.Plat },
+            //    Dessert = new Produit() { TypeMenu = TypeMenu.Dessert },
+            //    Name = "Formule déjeuner",
+            //    Price = 15
+            //});
+            //Products.Add(new Produit()
+            //{
+            //    Name = "Barquette de frites",
+            //    Price = 3
+            //});
+        }
     }
 }
