@@ -12,6 +12,7 @@ namespace FoodTruck.UI
     public class Panier : BindableBase
     {
         public ObservableCollection<Produit> Products = new ObservableCollection<Produit>();
+
         private decimal _total;
         public decimal Total
         {
@@ -22,36 +23,21 @@ namespace FoodTruck.UI
                     result += p.Price;
                 return result;
             }
-            set
-            {
+            set {
                 SetProperty(ref _total, value);
             }
+            
         }
 
         public void Add(Produit p)
         {
             Products.Add(p);
+            Total = Total;
         }
         public void Remove(Produit p)
         {
             Products.Remove(p);
         }
-
-        public Panier()
-        {
-            //Products.Add(new Menu()
-            //{
-            //    Boisson = new Produit() { TypeMenu = TypeMenu.Boisson },
-            //    Plat = new Produit() { TypeMenu = TypeMenu.Plat },
-            //    Dessert = new Produit() { TypeMenu = TypeMenu.Dessert },
-            //    Name = "Formule déjeuner",
-            //    Price = 15
-            //});
-            //Products.Add(new Produit()
-            //{
-            //    Name = "Barquette de frites",
-            //    Price = 3
-            //});
-        }
+        
     }
 }
