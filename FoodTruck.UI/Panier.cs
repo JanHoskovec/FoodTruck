@@ -37,6 +37,7 @@ namespace FoodTruck.UI
         public void Remove(Produit p)
         {
             Products.Remove(p);
+            Total = Total;
         }
         
     }

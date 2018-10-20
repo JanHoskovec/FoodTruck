@@ -106,6 +106,7 @@
     <Compile Include="ViewModels\DefaultViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
     <Compile Include="ViewModels\SignupViewModel.cs" />
     <Page Include="Acceuil.xaml">
       <SubType>Designer</SubType>
