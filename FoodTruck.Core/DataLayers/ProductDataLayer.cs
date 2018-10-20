@@ -77,5 +77,7 @@ namespace FoodTruck.Core.DataLayers
 
             return result;
         }
+
+        
     }
 }

@@ -16,7 +16,7 @@
                 <Button Background="{StaticResource FormuleG}" Click="Button_Click" BorderBrush="Black" BorderThickness="2" Width="175" Height="70" Content="Formule gouter 5€" Margin="10 0 0 0" HorizontalAlignment="Right" FontSize="15" />
                 <Button Background="{StaticResource FormuleDin}" Click="Button_Click" BorderBrush="Black" BorderThickness="2" Width="175" Height="70"  Content="Formule dîner 15€" Margin="10 0 0 0" HorizontalAlignment="Right" FontSize="15"/>
             </StackPanel>
-            <Button Background="{StaticResource Carte}" BorderBrush="Black" BorderThickness="2" Width="170" Height="70"  Content="Nos Produits à la carte..." Margin="314,0,304,0" HorizontalAlignment="Center" FontSize="15"/>
+            <Button Background="{StaticResource Carte}" Click="Button_Click" BorderBrush="Black" BorderThickness="2" Width="170" Height="70"  Content="Nos Produits à la carte..." Margin="314,0,304,0" HorizontalAlignment="Center" FontSize="15"/>
         </StackPanel>
         <Frame x:Name="Choix" NavigationUIVisibility="Hidden" />
 

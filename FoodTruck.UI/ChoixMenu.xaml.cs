@@ -44,6 +44,9 @@ namespace FoodTruck.UI
                 case ("Formule gouter 5€"):
                     Choix.Navigate(new Menu2Items(TypeFormule.Gouter));
                     break;
+                case ("Nos Produits à la carte..."):
+                    Choix.Navigate(new Catalog());
+                    break;
             }
         }
     }
