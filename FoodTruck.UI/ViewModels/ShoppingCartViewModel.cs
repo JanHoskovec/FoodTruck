@@ -26,6 +26,12 @@ namespace FoodTruck.UI.ViewModels
             get { return _commandPlaceOrder; }
         }
 
+        private DelegateCommand _commandEmpty;
+        public DelegateCommand Empty
+        {
+            get { return _commandEmpty; }
+        }
+
         public Session ActiveSession { get { return Session.Instance(); } }
 
         public delegate void MyEventAction(object redirectTo);
@@ -36,6 +42,7 @@ namespace FoodTruck.UI.ViewModels
         {
             _commandRemove = new DelegateCommand<Produit>(DoRemoveFromCart);
             _commandPlaceOrder = new DelegateCommand(DoPlaceOrder);
+            _commandEmpty = new DelegateCommand(DoEmpty);
         }
 
         protected void DoRemoveFromCart(Produit p)
@@ -65,6 +72,11 @@ namespace FoodTruck.UI.ViewModels
 
             // Redirect back
             RedirectEvent?.Invoke(new Acceuil());
+        }
+
+        protected void DoEmpty()
+        {
+            Session.Instance().Panier.Empty();
         }
     }
 }

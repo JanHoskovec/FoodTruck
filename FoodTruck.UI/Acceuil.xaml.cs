@@ -28,25 +28,25 @@ namespace FoodTruck.UI
             InitializeComponent();
             var vm = new AccueilViewModel();
             this.DataContext = vm;
-            TopThree.ItemsSource = vm.TopThree;
+            //TopThree.ItemsSource = vm.TopThree;
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            DependencyObject dep = (DependencyObject)e.OriginalSource;
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    DependencyObject dep = (DependencyObject)e.OriginalSource;
 
-            while ((dep != null) && !(dep is ListViewItem))
-            {
-                dep = VisualTreeHelper.GetParent(dep);
-            }
+        //    while ((dep != null) && !(dep is ListViewItem))
+        //    {
+        //        dep = VisualTreeHelper.GetParent(dep);
+        //    }
 
-            if (dep == null)
-                return;
+        //    if (dep == null)
+        //        return;
 
-            Produit item = (Produit)TopThree.ItemContainerGenerator.ItemFromContainer(dep);
+        //    Produit item = (Produit)TopThree.ItemContainerGenerator.ItemFromContainer(dep);
 
-            this.NavigationService.Navigate(new ProductDetails(item));
-        }
+        //    this.NavigationService.Navigate(new ProductDetails(item));
+        //}
     }
 }

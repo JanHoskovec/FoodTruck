@@ -29,11 +29,17 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        
-            <StackPanel Grid.Row="1" x:Name="SumLabel" HorizontalAlignment="Right">
-                <TextBlock Text="{Binding ActiveSession.Panier.Total, StringFormat=Total : {0} €}" Margin="0 0 200 0"/>
-            </StackPanel>
-        <Button Grid.Row="2" x:Name="CommandButton" Content="Commander" Command="{Binding PlaceOrder}" IsEnabled="{Binding ActiveSession.IsLoggedIn}"/>
 
+        <StackPanel Grid.Row="1" x:Name="SumLabel" HorizontalAlignment="Right">
+            <TextBlock Text="{Binding ActiveSession.Panier.Total, StringFormat=Total : {0} €}" Margin="0 0 200 0"/>
+        </StackPanel>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" x:Name="EmptyButton" Content="Vider le panier" Command="{Binding Empty}" />
+            <Button Grid.Column="1" x:Name="CommandButton" Content="Commander" Command="{Binding PlaceOrder}" IsEnabled="{Binding ActiveSession.CanCommand}"/>
+        </Grid>
     </Grid>
 </Page>

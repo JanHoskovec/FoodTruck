@@ -32,6 +32,7 @@ namespace FoodTruck.UI.ViewModels
         public SignupViewModel()
         {
             _user = new User();
+            _user.BirthDate = DateTime.Now.AddYears(-30);
             _command = new DelegateCommand<PasswordBox>(DoSignUp);
         }
 
