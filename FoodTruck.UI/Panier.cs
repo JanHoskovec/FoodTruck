@@ -86,7 +86,7 @@ namespace FoodTruck.UI
 
         private CartItem WhichContains(Produit p)
         {
-            return Products.SingleOrDefault(c => c.Produit.Id == p.Id);
+            return Products.FirstOrDefault(c => c.Produit.Id == p.Id);
         }
 
     }
