@@ -33,21 +33,21 @@
             </Grid>
 
 
-            <Button Width="80" Click="ClickOnLogo">
+            <Button Width="100" Click="ClickOnLogo">
                 <Button.Background>
                     <ImageBrush ImageSource="Media/logo.png" />
                 </Button.Background>
             </Button>
-            <Button Width="80" Click="ClickOnLogo" Background="Chocolate">
+            <Button Width="100" Click="ClickOnLogo" Background="Chocolate">
                 Acceuil
             </Button>
-            <Button Width="80" Click="Button_Click" Background="Chocolate">
+            <Button Width="100" Click="Button_Click" Background="Chocolate">
                 Menu
             </Button>
-            <Button Width="80" Click="Button_Click" Background="Chocolate">
+            <Button Width="100" Click="Button_Click" Background="Chocolate">
                 Connexion
             </Button>
-            <Button Width="80" HorizontalAlignment="Right" Click="ClickOnCart">
+            <Button Width="100" HorizontalAlignment="Right" Click="ClickOnCart">
                 <Button.Background>
                     <ImageBrush ImageSource="Media/Panier.png" />
                 </Button.Background>

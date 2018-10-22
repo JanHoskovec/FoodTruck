@@ -32,7 +32,7 @@ namespace FoodTruck.UI
         public void Add(Produit p)
         {
             CartItem c = WhichContains(p);
-            if(c == null)
+            if(c == null || p.TypeMenu == TypeMenu.Formule)
             {
                 Products.Add(new CartItem { Produit = p, Count = 1 });
             }
@@ -63,7 +63,16 @@ namespace FoodTruck.UI
         {
             string result = "Récapitulatif de votre commande : \n\n";
             foreach (CartItem c in Products)
+            { 
                 result += $"{c.Count}x {c.Produit.Name}\t {c.Produit.Quantity} {c.Produit.Unity}\tà {c.Produit.Price} € : {c.Produit.Price*c.Count} €\n";
+                if (!c.IsNotMenu)
+                {
+                    if ((c.Produit as Menu).Plat != null)
+                        result += $"\tPlat : {(c.Produit as Menu).Plat.Name}\n";
+                    result += $"\tBoisson : {(c.Produit as Menu).Boisson.Name}\n";
+                    result += $"\tDessert : {(c.Produit as Menu).Dessert.Name}\n";
+                }
+            }
             result += $"\nTotal : {Total} €";
             return result;
         }

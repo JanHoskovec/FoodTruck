@@ -32,6 +32,8 @@ namespace FoodTruck.Core.Models
         public Menu()
         {
             this.TypeMenu = TypeMenu.Formule;
+            this.Quantity = 1;
+            this.Unity = "";
         }
 
     }

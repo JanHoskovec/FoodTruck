@@ -13,7 +13,7 @@ namespace FoodTruck.Core.Models
         private int _count;
         public Produit Produit { get { return _produit; } set { SetProperty(ref _produit, value); } }
         public int Count { get { return _count; } set { SetProperty(ref _count, value); } }
-
+        public bool IsNotMenu { get { return Produit.TypeMenu != TypeMenu.Formule; } }
 
 
     }
