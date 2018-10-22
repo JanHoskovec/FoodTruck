@@ -10,15 +10,16 @@ namespace FoodTruck.Core.DataLayers
 {
     public class ArchiveDataLayer
     {
-        public void AddTransaction(Produit p)
+        public void AddTransaction(CartItem c)
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = $"insert into Historique ([ProduitId],[TimeStamp]) values ({p.Id},getdate())";
-                    command.ExecuteNonQuery();
+                    command.CommandText = $"insert into Historique ([ProduitId],[TimeStamp]) values ({c.Produit.Id},getdate())";
+                    for (int i=0; i<c.Count; i++)
+                        command.ExecuteNonQuery();
                 }
             }
         }

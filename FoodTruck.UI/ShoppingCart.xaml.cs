@@ -43,10 +43,18 @@ namespace FoodTruck.UI
             if (dep == null)
                 return;
 
-            Produit item = (Produit)MyShoppingCart.ItemContainerGenerator.ItemFromContainer(dep);
-            MessageBoxResult messageBoxResult = MessageBox.Show($"Voulez-vous vraiment enlever {item.Name} de votre panier ?", "Confirmation", MessageBoxButton.YesNo);
-            if (messageBoxResult == MessageBoxResult.Yes)
-                Session.Instance().Panier.Remove(item);
+            Produit item = ((CartItem)MyShoppingCart.ItemContainerGenerator.ItemFromContainer(dep)).Produit;
+
+            switch((sender as Button).Content)
+            {
+                case ("+"):
+                    Session.Instance().Panier.Add(item);
+                    break;
+                case ("-"):
+                    Session.Instance().Panier.Remove(item);
+                    break;
+            }
+            
         }
     }
 }

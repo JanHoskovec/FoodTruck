@@ -39,6 +39,7 @@ namespace FoodTruck.UI
             {
                 Session.Instance().Panier.Add(DataContext as Produit);
             }
+            
         }
     }
 }

@@ -11,7 +11,7 @@ namespace FoodTruck.UI
 {
     public class Panier : BindableBase
     {
-        public ObservableCollection<Produit> Products = new ObservableCollection<Produit>();
+        public ObservableCollection<CartItem> Products = new ObservableCollection<CartItem>();
 
         private decimal _total;
         public decimal Total
@@ -19,8 +19,8 @@ namespace FoodTruck.UI
             get
             {
                 decimal result = 0;
-                foreach (Produit p in Products)
-                    result += p.Price;
+                foreach (CartItem c in Products)
+                    result += c.Produit.Price * c.Count;
                 return result;
             }
             set {
@@ -31,13 +31,26 @@ namespace FoodTruck.UI
 
         public void Add(Produit p)
         {
-            Products.Add(p);
-            Total = Total;
+            CartItem c = WhichContains(p);
+            if(c == null)
+            {
+                Products.Add(new CartItem { Produit = p, Count = 1 });
+            }
+            else
+            {
+                c.Count++;
+            }
+            RecomputeTotal();
         }
         public void Remove(Produit p)
         {
-            Products.Remove(p);
-            Total = Total;
+            CartItem c = WhichContains(p);
+            if (c.Count == 1)
+                Products.Remove(c);
+            else
+                c.Count--;
+            RecomputeTotal();
+
         }
 
         public void Empty()
@@ -49,11 +62,23 @@ namespace FoodTruck.UI
         public string Invoice()
         {
             string result = "Récapitulatif de votre commande : \n\n";
-            foreach (Produit p in Products)
-                result += $"{p.Name}\t{p.Quantity} {p.Unity}\t{p.Price} €\n";
+            foreach (CartItem c in Products)
+                result += $"{c.Count}x {c.Produit.Name}\t {c.Produit.Quantity} {c.Produit.Unity}\tà {c.Produit.Price} € : {c.Produit.Price*c.Count} €\n";
             result += $"\nTotal : {Total} €";
             return result;
         }
         
+        private void RecomputeTotal()
+        {
+            Total = 0;
+            foreach (CartItem c in Products)
+                Total += c.Produit.Price * c.Count;
+        }
+
+        private CartItem WhichContains(Produit p)
+        {
+            return Products.SingleOrDefault(c => c.Produit.Id == p.Id);
+        }
+
     }
 }

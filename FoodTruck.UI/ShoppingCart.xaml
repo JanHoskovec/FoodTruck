@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:toolkit="http://schemas.microsoft.com/wpf/2008/toolkit"
       xmlns:local="clr-namespace:FoodTruck.UI"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
@@ -17,12 +18,26 @@
         <ListView Grid.Row="0" x:Name="MyShoppingCart" Background="Transparent">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Article" Width="500" DisplayMemberBinding="{Binding Name}"/>
-                    <GridViewColumn Header="Prix" Width="100" DisplayMemberBinding="{Binding Price}" />
+                    <GridViewColumn Header="Article" Width="500" DisplayMemberBinding="{Binding Produit.Name}"/>
+                    <GridViewColumn Header="Prix" Width="100" DisplayMemberBinding="{Binding Produit.Price}" />
+                    <GridViewColumn Width="25">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="+" Click="Button_Click"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                     <GridViewColumn>
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Enlever du panier" Click="Button_Click"/>
+                                <TextBlock Text="{Binding Count}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="25">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="-" Click="Button_Click"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

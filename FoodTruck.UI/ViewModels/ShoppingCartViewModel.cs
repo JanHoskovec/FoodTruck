@@ -54,8 +54,8 @@ namespace FoodTruck.UI.ViewModels
         {
             // Write to the Database
             ArchiveDataLayer layer = new ArchiveDataLayer();
-            foreach (Produit p in Session.Instance().Panier.Products)
-                layer.AddTransaction(p);
+            foreach (CartItem c in Session.Instance().Panier.Products)
+                layer.AddTransaction(c);
             // Send an e-mail confirmation
             MailMessage message = new MailMessage()
             {
