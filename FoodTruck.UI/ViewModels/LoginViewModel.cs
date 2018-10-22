@@ -29,7 +29,6 @@ namespace FoodTruck.UI.ViewModels
         public LoginViewModel()
         {
             _user = new User();
-            _user.FirstName = "John";
             _command = new DelegateCommand<PasswordBox>(DoLogin);
         }
 

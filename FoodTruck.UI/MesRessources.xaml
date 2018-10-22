@@ -13,4 +13,16 @@
                    Viewport="0 0 1 1" ImageSource="./Media/AlaCarte.jpg" Opacity="0.3"></ImageBrush>
     <ImageBrush x:Key="FormuleG" ViewportUnits="RelativeToBoundingBox"
                    Viewport="0 0 1 1" ImageSource="./Media/gouter.jpg" Opacity="0.2"></ImageBrush>
+    <ImageBrush x:Key="BonAp" ViewportUnits="RelativeToBoundingBox"
+                   Viewport="0 0 1 1" ImageSource="./Media/BonAp.png"></ImageBrush>
+    <ImageBrush x:Key="Bio" ViewportUnits="RelativeToBoundingBox"
+                   Viewport="0 0 1 1" ImageSource="./Media/bio.png"></ImageBrush>
+    <ImageBrush x:Key="FoodTruck" ViewportUnits="RelativeToBoundingBox"
+                   Viewport="0 0 1 1" ImageSource="./Media/foodtruck.png"></ImageBrush>
+    <ImageBrush x:Key="Jus" ViewportUnits="RelativeToBoundingBox"
+                   Viewport="0 0 1 1" ImageSource="./Media/Jus.jpg"></ImageBrush>
+    <ImageBrush x:Key="Gateau" ViewportUnits="RelativeToBoundingBox"
+                   Viewport="0 0 1 1" ImageSource="./Media/GateauChoc.jpg"></ImageBrush>
+    <ImageBrush x:Key="Tartare" ViewportUnits="RelativeToBoundingBox"
+                   Viewport="0 0 1 1" ImageSource="./Media/Tartare.png"></ImageBrush>
 </ResourceDictionary>

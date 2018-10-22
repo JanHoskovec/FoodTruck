@@ -137,5 +137,26 @@ namespace FoodTruck.Core.DataLayers
             return result;
         }
 
+        public ObservableCollection<Produit> GetTop3()
+        {
+            ObservableCollection<Produit> result = new ObservableCollection<Produit>();
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "select top 3 ProduitId from Historique group by ProduitId order by count(ProduitId) desc";
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while(reader.Read())
+                        {
+                            result.Add(GetOneById((int)(decimal)reader["ProduitId"]));
+                        }
+                    }
+                }
+            }
+            return result;
+        }
+
     }
 }

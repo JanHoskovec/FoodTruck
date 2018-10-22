@@ -29,7 +29,7 @@ namespace FoodTruck.UI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Catalog());
+            this.NavigationService.GoBack();
         }
     }
 }

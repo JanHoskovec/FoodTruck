@@ -49,11 +49,15 @@ namespace FoodTruck.UI.ViewModels
                     MailMessage message = new MailMessage()
                     {
                         Subject = "Bienvenue chez Bon App !",
-                        Body = "Ceci est un message de test",
+                        Body = "Merci d'avoir créé votre compte BonApp !\n\n" +
+                        "Vos identifiants :\n" +
+                        $"\tE-mail : \t{user.Email}" +
+                        $"\tMot de passe : \t{box.Password}",
                         From = new MailAddress("bonapp69test@gmail.com")
                     };
                     message.To.Add(user.Email);
                     DefaultViewModel.SendMail(message);
+                    MessageBox.Show("Votre compte a bien été créé. Vous allez recevoir un e-mail de confirmation.");
                     RedirectEvent?.Invoke(new Login());
                 }
                 else

@@ -10,7 +10,7 @@
 
     <Grid>
         <StackPanel Orientation="Vertical" MaxWidth="500" HorizontalAlignment="Center">
-            <Image MinHeight="100" MinWidth="100" Source="{Binding Image}"/>
+            <Image MinHeight="100" MinWidth="100" MaxHeight="300" MaxWidth="300" Source="{Binding Image}"/>
             <TextBlock Text="{Binding Name}"/>
             <TextBlock>
                 <TextBlock.Text>
