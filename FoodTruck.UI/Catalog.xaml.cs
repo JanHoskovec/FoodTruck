@@ -2,6 +2,7 @@
 using FoodTruck.UI.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,8 +27,16 @@ namespace FoodTruck.UI
         {
             InitializeComponent();
             this.DataContext = new CatalogViewModel();
+            List.ItemsSource = (DataContext as CatalogViewModel).Produits;
+            CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(List.ItemsSource);
+            PropertyGroupDescription groupDescription = new PropertyGroupDescription("TypeMenu");
+            view.GroupDescriptions.Add(groupDescription);
+            view.SortDescriptions.Add(new SortDescription("Price", ListSortDirection.Ascending));
+            view.SortDescriptions.Add(new SortDescription("Name", ListSortDirection.Ascending));
 
         }
+
+
 
         private void List_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {

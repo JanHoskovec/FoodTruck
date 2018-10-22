@@ -53,7 +53,8 @@ namespace FoodTruck.Core.DataLayers
                 string commandText = "select Id, Designation, Prix, Image, Quantite, Unite, TypeMenu from Produit " +
                     "join Contenir on Contenir.ProduitId = Produit.Id " +
                     "where Contenir.MenuId = " + (int)typeRepas +
-                    " and Produit.TypeMenu = " + (int)typeItem;
+                    " and Produit.TypeMenu = " + (int)typeItem +
+                    " order by Prix";
                 using (SqlCommand command = new SqlCommand(commandText, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())

@@ -6,21 +6,24 @@
         <Setter Property="TextAlignment" Value="Center" />
         <Setter Property="TextWrapping" Value="Wrap" />
     </Style>
-    <Style TargetType="Button">
+    <Style TargetType="TextBox">
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+    <Style TargetType="Button"> 
         <Setter Property="FontSize" Value="18" />
     </Style>
     <ImageBrush x:Key="FormulePD" ViewportUnits="RelativeToBoundingBox"
                    Viewport="0 0 1 1" ImageSource="./Media/FormulePetitDej.jpg" Opacity="0.3"></ImageBrush>
     <ImageBrush x:Key="FormuleD" ViewportUnits="RelativeToBoundingBox"
-                   Viewport="0 0 1 1" ImageSource="./Media/FormuleDejeuner.jpg" Opacity="0.5"></ImageBrush>
+                   Viewport="0 0 1 1" ImageSource="./Media/FormuleDejeuner.jpg" Opacity="0.6"></ImageBrush>
     <ImageBrush x:Key="FormuleDin" ViewportUnits="RelativeToBoundingBox"
                    Viewport="0 0 1 1" ImageSource="./Media/FormuleDiner.png" Opacity="0.5"></ImageBrush>
     <ImageBrush x:Key="Fond1" ViewportUnits="RelativeToBoundingBox"
                    Viewport="0 0 1 1" ImageSource="./Media/fon.png" Opacity="0.6"></ImageBrush>
     <ImageBrush x:Key="Carte" ViewportUnits="RelativeToBoundingBox"
-                   Viewport="0 0 1 1" ImageSource="./Media/AlaCarte.jpg" Opacity="0.3"></ImageBrush>
+                   Viewport="0 0 1 1" ImageSource="./Media/AlaCarte.jpg" Opacity="0.4"></ImageBrush>
     <ImageBrush x:Key="FormuleG" ViewportUnits="RelativeToBoundingBox"
-                   Viewport="0 0 1 1" ImageSource="./Media/gouter.jpg" Opacity="0.2"></ImageBrush>
+                   Viewport="0 0 1 1" ImageSource="./Media/gouter.jpg" Opacity="0.25"></ImageBrush>
     <ImageBrush x:Key="BonAp" ViewportUnits="RelativeToBoundingBox"
                    Viewport="0 0 1 1" ImageSource="./Media/BonAp.png"></ImageBrush>
     <ImageBrush x:Key="Bio" ViewportUnits="RelativeToBoundingBox"

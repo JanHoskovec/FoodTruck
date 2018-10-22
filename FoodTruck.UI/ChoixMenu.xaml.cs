@@ -28,23 +28,23 @@ namespace FoodTruck.UI
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;
-            switch (b.Content)
+            switch (b.Name)
             {
-                case ("Formule déjeuner 12€"):
+                case ("Button_D"):
                     Choix.Navigate(new Menu3Items(TypeFormule.Dejeuner));
                     break;
 
-                case ("Formule dîner 15€"):
+                case ("Button_Din"):
                     Choix.Navigate(new Menu3Items(TypeFormule.Diner));
                     break;
 
-                case ("Formule petit déjeuner 5€"):
+                case ("Button_PD"):
                     Choix.Navigate(new Menu2Items(TypeFormule.PetitDejeuner));
                     break;
-                case ("Formule gouter 5€"):
+                case ("Button_G"):
                     Choix.Navigate(new Menu2Items(TypeFormule.Gouter));
                     break;
-                case ("Nos Produits à la carte..."):
+                case ("Button_C"):
                    
                     this.NavigationService.Navigate(new Catalog());
                     break;

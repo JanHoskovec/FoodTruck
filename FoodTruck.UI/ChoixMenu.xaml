@@ -10,13 +10,13 @@
 
         <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="Menu" Orientation="Vertical">
 
-            <StackPanel x:Name="des" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" Height="70" >
-                <Button Background="{StaticResource FormulePD}"  Click="Button_Click" BorderBrush="Black" BorderThickness="2" Width="175" Content="Formule petit déjeuner 5€" Margin="10 0 0 0" HorizontalAlignment="Right"/>
-                <Button Background="{StaticResource FormuleD}" Click="Button_Click"  BorderBrush="Black" BorderThickness="2" Width="175"  Content="Formule déjeuner 12€" Margin="10 0 0 0" HorizontalAlignment="Right"/>
-                <Button Background="{StaticResource FormuleG}" Click="Button_Click" BorderBrush="Black" BorderThickness="2" Width="175"  Content="Formule gouter 5€" Margin="10 0 0 0" HorizontalAlignment="Right" />
-                <Button Background="{StaticResource FormuleDin}" Click="Button_Click" BorderBrush="Black" BorderThickness="2" Width="175"  Content="Formule dîner 15€" Margin="10 0 0 0" HorizontalAlignment="Right" />
-            </StackPanel>
-            <Button Background="{StaticResource Carte}" Click="Button_Click" BorderBrush="Black" BorderThickness="2" Width="170" Height="70"  Content="Nos Produits à la carte..." Margin="314,0,304,0" HorizontalAlignment="Center" FontSize="15"/>
+            <DockPanel x:Name="des"  HorizontalAlignment="Center" Margin="10" Height="70" >
+                <Button Background="{StaticResource FormulePD}" x:Name="Button_PD" Click="Button_Click" Width="170" BorderBrush="Black" BorderThickness="2" Content="Formule petit déjeuner 5€" Margin="10 0 0 0" HorizontalAlignment="Right"/>
+                <Button Background="{StaticResource FormuleD}" x:Name="Button_D" Click="Button_Click" Width="170" BorderBrush="Black" BorderThickness="2" Content="Formule déjeuner 12€" Margin="10 0 0 0" HorizontalAlignment="Right"/>
+                <Button Background="{StaticResource FormuleG}" x:Name="Button_G" Click="Button_Click" Width="170" BorderBrush="Black" BorderThickness="2" Content="Formule gouter 5€" Margin="10 0 0 0" HorizontalAlignment="Right" />
+                <Button Background="{StaticResource FormuleDin}" x:Name="Button_Din" Click="Button_Click" Width="170" BorderBrush="Black" BorderThickness="2" Content="Formule dîner 15€" Margin="10 0 0 0" HorizontalAlignment="Right" />
+            </DockPanel>
+            <Button Background="{StaticResource Carte}" x:Name="Button_C" Click="Button_Click" BorderBrush="Black" BorderThickness="2" Width="170" Height="70"  Content="Nos produits à la carte..." Margin="314,0,304,0" HorizontalAlignment="Center" FontSize="15"/>
         </StackPanel>
         <Frame x:Name="Choix" NavigationUIVisibility="Hidden" />
 

@@ -39,7 +39,7 @@ namespace FoodTruck.UI
             {
                 Session.Instance().Panier.Add(DataContext as Produit);
             }
-            
+            this.NavigationService.Navigate(new ShoppingCart());
         }
     }
 }

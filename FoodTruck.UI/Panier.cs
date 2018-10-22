@@ -64,7 +64,7 @@ namespace FoodTruck.UI
             string result = "Récapitulatif de votre commande : \n\n";
             foreach (CartItem c in Products)
             { 
-                result += $"{c.Count}x {c.Produit.Name}\t {c.Produit.Quantity} {c.Produit.Unity}\tà {c.Produit.Price} € : {c.Produit.Price*c.Count} €\n";
+                result += $"{c.Count}x {c.Produit.Name}\t {c.Produit.Quantity:#} {c.Produit.Unity}\tà {c.Produit.Price} € : {c.Produit.Price*c.Count} €\n";
                 if (!c.IsNotMenu)
                 {
                     if ((c.Produit as Menu).Plat != null)

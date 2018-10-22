@@ -20,23 +20,17 @@
                 <GridView>
                     <GridViewColumn Header="Article" Width="500" DisplayMemberBinding="{Binding Produit.Name}"/>
                     <GridViewColumn Header="Prix" Width="100" DisplayMemberBinding="{Binding Produit.Price}" />
-                    <GridViewColumn Header="Quantité" Width="100">
+                    <GridViewColumn Header="Quantité" Width="200">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="1*"/>
-                                        <ColumnDefinition Width="1*"/>
-                                        <ColumnDefinition Width="1*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Button Grid.Column="0" Content="+" Click="Button_Click" IsEnabled="{Binding IsNotMenu}"/>
-                                    <TextBlock Grid.Column="1" Text="{Binding Count}"/>
-                                    <Button Grid.Column="2" Content="-" Click="Button_Click"/>
-                                </Grid>
+                                <DockPanel>
+                                    <Button DockPanel.Dock="Left" Content="+" Click="Button_Click" IsEnabled="{Binding IsNotMenu}"/>
+                                    <TextBlock Text="{Binding Count}"/>
+                                    <Button DockPanel.Dock="Right" Content="-" Click="Button_Click"/>
+                                </DockPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-
                 </GridView>
             </ListView.View>
         </ListView>
