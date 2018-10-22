@@ -11,7 +11,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <ListView Grid.Row="0" x:Name="MyShoppingCart" Background="Transparent">
             <ListView.View>
@@ -30,8 +31,9 @@
         </ListView>
         
             <StackPanel Grid.Row="1" x:Name="SumLabel" HorizontalAlignment="Right">
-                <TextBlock Text="{Binding Total, StringFormat=Total : {0} €}" Margin="0 0 200 0"/>
+                <TextBlock Text="{Binding ActiveSession.Panier.Total, StringFormat=Total : {0} €}" Margin="0 0 200 0"/>
             </StackPanel>
-        
+        <Button Grid.Row="2" x:Name="CommandButton" Content="Commander" Command="{Binding PlaceOrder}" IsEnabled="{Binding ActiveSession.IsLoggedIn}"/>
+
     </Grid>
 </Page>

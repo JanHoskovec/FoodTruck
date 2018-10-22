@@ -95,6 +95,9 @@
       <DependentUpon>Menu3Items.xaml</DependentUpon>
     </Compile>
     <Compile Include="Panier.cs" />
+    <Compile Include="ProductDetails.xaml.cs">
+      <DependentUpon>ProductDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShoppingCart.xaml.cs">
       <DependentUpon>ShoppingCart.xaml</DependentUpon>
     </Compile>
@@ -106,7 +109,6 @@
     <Compile Include="ViewModels\DefaultViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
-    <Compile Include="ViewModels\ProductDetailsViewModel.cs" />
     <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
     <Compile Include="ViewModels\SignupViewModel.cs" />
     <Page Include="Acceuil.xaml">
@@ -138,6 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Menu3Items.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProductDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

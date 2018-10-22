@@ -78,6 +78,64 @@ namespace FoodTruck.Core.DataLayers
             return result;
         }
 
-        
+        public ObservableCollection<Produit> GetAllButMenus()
+        {
+            ObservableCollection<Produit> result = new ObservableCollection<Produit>();
+
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                connection.Open();
+                string commandText = $"select Id, Designation, Prix, Image, Quantite, Unite, TypeMenu from produit where TypeMenu != {(int)TypeMenu.Formule}";
+                using (SqlCommand command = new SqlCommand(commandText, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result.Add(new Produit
+                            {
+                                Id = (decimal)reader["Id"],
+                                Name = (string)reader["Designation"],
+                                Price = (decimal)reader["Prix"],
+                                Image = (string)reader["Image"],
+                                Quantity = (decimal)reader["Quantite"],
+                                Unity = (string)reader["Unite"],
+                                TypeMenu = (TypeMenu)reader["TypeMenu"]
+                            });
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public Produit GetOneById(int Id)
+        {
+            Produit result = new Produit();
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.ConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = $"select Id, Designation, Prix, Image, Quantite, Unite, TypeMenu from produit where Id = {Id}";
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result.Id = (decimal)reader["Id"];
+                            result.Name = (string)reader["Designation"];
+                            result.Price = (decimal)reader["Prix"];
+                            result.Image = (string)reader["Image"];
+                            result.Quantity = (decimal)reader["Quantite"];
+                            result.Unity = (string)reader["Unite"];
+                            result.TypeMenu = (TypeMenu)reader["TypeMenu"];
+                        }
+                    }
+                }
+            }
+            return result;
+        }
+
     }
 }

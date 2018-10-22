@@ -1,4 +1,5 @@
 ﻿using FoodTruck.Core.Models;
+using FoodTruck.UI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,8 +26,9 @@ namespace FoodTruck.UI
         public ShoppingCart()
         {
             InitializeComponent();
-            MyShoppingCart.ItemsSource = Session.Instance().Panier.Products;
-            SumLabel.DataContext = Session.Instance().Panier;
+            var vm = new ShoppingCartViewModel();
+            MyShoppingCart.ItemsSource = vm.ActiveSession.Panier.Products;
+            this.DataContext = vm;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

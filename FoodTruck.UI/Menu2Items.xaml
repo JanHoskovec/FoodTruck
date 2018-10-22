@@ -9,7 +9,7 @@
       Title="Menu2Items">
 
     <Grid>
-        <Border CornerRadius="25" BorderThickness="3" BorderBrush="Black" >
+        
             <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <StackPanel x:Name="bois" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10 20 10 10">
                     <TextBlock Text="Boisson" HorizontalAlignment="Left" Width="100"/>
@@ -23,6 +23,6 @@
 
                 <Button Width="175" Height="30" Background="SkyBlue" Content="Ajouter au panier" Command="{Binding AddToCart}" Margin="10 20 0 0" HorizontalAlignment="Center"/>
             </StackPanel>
-        </Border>
+ 
     </Grid>
 </Page>

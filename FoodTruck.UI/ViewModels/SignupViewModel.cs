@@ -53,7 +53,7 @@ namespace FoodTruck.UI.ViewModels
                         From = new MailAddress("bonapp69test@gmail.com")
                     };
                     message.To.Add(user.Email);
-                    SendMail(message);
+                    DefaultViewModel.SendMail(message);
                     RedirectEvent?.Invoke(new Login());
                 }
                 else
@@ -69,17 +69,7 @@ namespace FoodTruck.UI.ViewModels
 
 
 
-        public static void SendMail(MailMessage Message)
-        {
-            SmtpClient client = new SmtpClient();
-            client.Host = "smtp.googlemail.com";
-            client.Port = 587;
-            client.UseDefaultCredentials = false;
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.EnableSsl = true;
-            client.Credentials = new NetworkCredential("bonapp69test@gmail.com", "bonapp69");
-            client.Send(Message);
-        }
+
 
         public static bool IsValidEmail(string email)
         {

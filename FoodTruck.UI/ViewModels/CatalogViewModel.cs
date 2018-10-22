@@ -21,7 +21,7 @@ namespace FoodTruck.UI.ViewModels
         public CatalogViewModel()
         {
             ProductDataLayer layer = new ProductDataLayer();
-            _produits = layer.GetAll();
+            _produits = layer.GetAllButMenus();
             AddToCart = new DelegateCommand<Produit>(DoAddToCart);
         }
 

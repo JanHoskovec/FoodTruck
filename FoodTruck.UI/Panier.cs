@@ -39,6 +39,21 @@ namespace FoodTruck.UI
             Products.Remove(p);
             Total = Total;
         }
+
+        public void Empty()
+        {
+            Products.Clear();
+            Total = 0;
+        }
+
+        public string Invoice()
+        {
+            string result = "Récapitulatif de votre commande : \n\n";
+            foreach (Produit p in Products)
+                result += $"{p.Name}\t{p.Quantity} {p.Unity}\t{p.Price} €\n";
+            result += $"\nTotal : {Total} €";
+            return result;
+        }
         
     }
 }

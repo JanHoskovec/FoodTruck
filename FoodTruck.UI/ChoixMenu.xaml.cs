@@ -45,7 +45,8 @@ namespace FoodTruck.UI
                     Choix.Navigate(new Menu2Items(TypeFormule.Gouter));
                     break;
                 case ("Nos Produits à la carte..."):
-                    Choix.Navigate(new Catalog());
+                   
+                    this.NavigationService.Navigate(new Catalog());
                     break;
             }
         }

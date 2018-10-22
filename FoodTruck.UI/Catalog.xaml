@@ -9,11 +9,18 @@
       Title="Catalog">
 
     <Grid>
-        <ListView ItemsSource="{Binding Produits}" x:Name="List" MouseDoubleClick="List_MouseDoubleClick">
+        <ListView ItemsSource="{Binding Produits}" x:Name="List" MouseDoubleClick="List_MouseDoubleClick" Background="Transparent">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Intitulé" Width="350" DisplayMemberBinding="{Binding Name}" />
                     <GridViewColumn Header="Prix" Width="150" DisplayMemberBinding="{Binding Price}" />
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Ajouter au panier" Click="Button_Click"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

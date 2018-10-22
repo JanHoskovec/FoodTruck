@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataLayers\ArchiveDataLayer.cs" />
     <Compile Include="DataLayers\MenuDataLayer.cs" />
     <Compile Include="DataLayers\ProductDataLayer.cs" />
     <Compile Include="DataLayers\UserDataLayer.cs" />

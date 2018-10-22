@@ -33,7 +33,24 @@ namespace FoodTruck.UI
         {
             DependencyObject dep = (DependencyObject)e.OriginalSource;
 
-            while((dep!=null)&&!(dep is ListViewItem))
+            while ((dep != null) && !(dep is ListViewItem))
+            {
+                dep = VisualTreeHelper.GetParent(dep);
+            }
+
+            if (dep == null)
+                return;
+
+            Produit item = (Produit)List.ItemContainerGenerator.ItemFromContainer(dep);
+
+            this.NavigationService.Navigate(new ProductDetails(item));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DependencyObject dep = (DependencyObject)e.OriginalSource;
+
+            while ((dep != null) && !(dep is ListViewItem))
             {
                 dep = VisualTreeHelper.GetParent(dep);
             }
