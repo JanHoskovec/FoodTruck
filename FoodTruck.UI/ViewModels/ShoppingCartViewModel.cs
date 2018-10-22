@@ -28,6 +28,10 @@ namespace FoodTruck.UI.ViewModels
 
         public Session ActiveSession { get { return Session.Instance(); } }
 
+        public delegate void MyEventAction(object redirectTo);
+        public event MyEventAction RedirectEvent;
+
+
         public ShoppingCartViewModel()
         {
             _commandRemove = new DelegateCommand<Produit>(DoRemoveFromCart);
@@ -58,6 +62,9 @@ namespace FoodTruck.UI.ViewModels
 
             // Empty the cart
             Session.Instance().Panier.Empty();
+
+            // Redirect back
+            RedirectEvent?.Invoke(new Acceuil());
         }
     }
 }

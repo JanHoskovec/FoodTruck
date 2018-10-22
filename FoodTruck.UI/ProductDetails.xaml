@@ -21,6 +21,7 @@
                 </TextBlock.Text>
             </TextBlock>
             <TextBlock Text="{Binding Price, StringFormat=Prix TTC : {0} €}" />
+            <Button Click="Button_Click_1" Content="Ajouter au panier" />
             <Button Click="Button_Click" Content="Retour" />
         </StackPanel>
     </Grid>

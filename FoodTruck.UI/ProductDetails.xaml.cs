@@ -31,5 +31,14 @@ namespace FoodTruck.UI
         {
             this.NavigationService.GoBack();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult messageBoxResult = MessageBox.Show("Souhaitez-vous ajouter ce produit au panier ?", $"{(DataContext as Produit).Name}", MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+            {
+                Session.Instance().Panier.Add(DataContext as Produit);
+            }
+        }
     }
 }
