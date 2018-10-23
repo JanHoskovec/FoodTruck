@@ -55,6 +55,10 @@ namespace FoodTruck.UI
             mainframe.Navigate(new ShoppingCart());
         }
         
+        private void ClickOnLogout(object sender, RoutedEventArgs e)
+        {
+            Session.Instance().user = null;
+        }
         
     }
 }

@@ -43,7 +43,7 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" x:Name="EmptyButton" Content="Vider le panier" Command="{Binding Empty}" />
+            <Button Grid.Column="0" x:Name="EmptyButton" Content="Vider le panier" Command="{Binding Empty}" IsEnabled="{Binding ActiveSession.HasItems}" Click="Click_Empty" />
             <Button Grid.Column="1" x:Name="CommandButton" Content="Commander" Command="{Binding PlaceOrder}" IsEnabled="{Binding ActiveSession.CanCommand}"/>
         </Grid>
     </Grid>

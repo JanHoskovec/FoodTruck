@@ -41,7 +41,7 @@
         <TextBlock Grid.Row="2" Grid.Column="2" Background="Chocolate" />
 
         <TextBlock Grid.Row="3" Grid.Column="0" Background="{StaticResource FoodTruck}" />
-        <StackPanel Grid.Row="3" Grid.Column="1">
+        <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">
             <TextBlock TextAlignment="Center" TextWrapping="Wrap"  
                    Text="BonApp est un foodtruck 100% bio développé par 3 chefs cuisiniers."  />
             <TextBlock  FontWeight="Bold"  
