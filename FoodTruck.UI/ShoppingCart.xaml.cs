@@ -31,6 +31,8 @@ namespace FoodTruck.UI
             this.DataContext = vm;
         }
 
+        // Dette technique
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             DependencyObject dep = (DependencyObject)e.OriginalSource;
@@ -56,5 +58,12 @@ namespace FoodTruck.UI
             }
             
         }
+        
+
+        private void Click_Empty(object sender, RoutedEventArgs e)
+        {
+            EmptyButton.IsEnabled = false;
+        }
+
     }
 }

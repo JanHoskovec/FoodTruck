@@ -32,8 +32,9 @@ namespace FoodTruck.UI
         public User user { get { return _user; } set {SetProperty(ref _user, value) ; } }
         private Panier _panier = new Panier();
         public Panier Panier { get { return _panier; } }
-        
-        public bool IsLoggedIn { get { return _user != null; } }
+
+        private bool _isLoggedIn;
+        public bool IsLoggedIn { get { return _user != null; } set { SetProperty(ref _isLoggedIn, value); } }
         public bool HasItems { get { return _panier.Products.Count > 0; } }
         public bool CanCommand { get { return IsLoggedIn && HasItems; } }
         #endregion

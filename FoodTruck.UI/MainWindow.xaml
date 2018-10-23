@@ -16,7 +16,8 @@
         </Grid.RowDefinitions>
         <DockPanel HorizontalAlignment="Stretch">
 
-            <Grid DockPanel.Dock="Right">
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+            <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -31,6 +32,10 @@
                 </TextBlock>
                 <TextBlock x:Name="total" Grid.Row="1" Text="{Binding Panier.Total, StringFormat=Votre panier : {0} €, Mode=TwoWay}" Margin="10 0 0 0" />
             </Grid>
+                <!--<Button Width="110" Click="ClickOnLogout" Background="Chocolate" IsEnabled="{Binding IsLoggedIn, Mode=TwoWay}">
+                    Déconnexion
+                </Button>-->
+            </StackPanel>
 
 
             <Button Width="100" Click="ClickOnLogo">

@@ -38,8 +38,9 @@ namespace FoodTruck.UI
             if (messageBoxResult == MessageBoxResult.Yes)
             {
                 Session.Instance().Panier.Add(DataContext as Produit);
+                this.NavigationService.Navigate(new ShoppingCart());
             }
-            this.NavigationService.Navigate(new ShoppingCart());
+          
         }
     }
 }

@@ -78,5 +78,6 @@ namespace FoodTruck.UI.ViewModels
         {
             Session.Instance().Panier.Empty();
         }
+
     }
 }
